@@ -8,6 +8,7 @@ import ArrowDown from "./Assets/Images/arrowdown.png";
 import SlideImgA from "./Assets/Images/RoundedRectangleA.png";
 import SlideImgB from "./Assets/Images/RoundedRectangleB.png";
 import SlideImgC from "./Assets/Images/RoundedRectangleC.png";
+import Logo from "./Assets/Images/logo.png";
 
 //Component imports
 import SectionOne from "./Components/SectionOne";
@@ -22,6 +23,44 @@ const StyledContainer = styled.div`
   max-width: 940px;
   position: relative;
   width: 100%;
+
+  .logo-signin {
+    visibility: hidden;
+    position: absolute;
+    background-color: #1c1d1e;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    .signUpIn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      p,
+      button {
+        color: #ffffff;
+        font-size: 15px;
+        font-family: Helvetica Neue LT GEO, 65 Medium;
+      }
+      button {
+        background-color: #ef602a;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 5px;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .logo-signin {
+      visibility: visible;
+      position: relative;
+    }
+  }
   .play-btn {
     background-color: #171718;
     display: flex;
@@ -34,7 +73,7 @@ const StyledContainer = styled.div`
     position: sticky;
     bottom: 0;
     z-index: 2222;
-    a {
+    button {
       cursor: pointer;
       font-size: 15px;
       padding: 8px 40px;
@@ -50,11 +89,31 @@ const StyledContainer = styled.div`
 const StyledContentHead = styled.div`
   position: relative;
   background-image: url(${HeadBackground});
+  background-color: #1c1d1e;
   background-repeat: no-repeat;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   height: 350px;
   background-size: 100% 100%;
+  @media screen and (max-width: 600px) {
+    height: 210px;
+  }
+
+  .content-head {
+    @media screen and (max-width: 600px) {
+      position: absolute;
+      top: 195px;
+      left: -16px;
+    }
+    position: -webkit-stick;
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+    z-index: 22222;
+  }
 
   .content-head-left {
     display: flex;
@@ -64,8 +123,35 @@ const StyledContentHead = styled.div`
     padding: 3px 12px;
     border-radius: 20px;
     gap: 12px;
+    p {
+      color: #fff;
+      background-color: #7d7d7d;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-family: Helvetica Neue LT GEO;
+    }
+    span {
+      color: #fff;
+      font-size: 15px;
+      font-family: Helvetica Neue LT GEO;
+      font-weight: bold;
+    }
+    @media screen and (max-width: 600px) {
+      background-color: #1c1d1e;
+      p {
+        background-color: #25292b;
+        font-size: 12px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
   }
   .content-head-right {
+    @media screen and (max-width: 600px) {
+      visibility: hidden;
+    }
     display: flex;
     align-items: center;
     background-color: #25292b;
@@ -74,6 +160,9 @@ const StyledContentHead = styled.div`
   }
 `;
 const StyledContentBody = styled.div`
+  @media screen and (max-width: 600px) {
+    padding: 13px;
+  }
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -92,6 +181,25 @@ const StyledContentBody = styled.div`
     gap: 14px;
     padding-top: 24px;
     padding-bottom: 32px;
+    h3 {
+      font-family: November GeLC;
+      text-align: start;
+      font-weight: bold;
+      font-size: 20px;
+      color: #fff;
+    }
+    @media screen and (max-width: 600px) {
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .h3Hid {
+        visibility: hidden;
+        position: absolute;
+      }
+    }
   }
 
   .section-title {
@@ -106,18 +214,12 @@ const StyledContentBody = styled.div`
       cursor: pointer;
     }
     .clickedSection {
-      /* position: absolute; */
       background-color: #ef5a21;
       border-radius: 20px;
-      /* padding: 30px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); */
     }
   }
 
   .title {
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,6 +245,9 @@ const StyledContentBody = styled.div`
   }
 `;
 const StyledContentFooter = styled.div`
+  @media screen and (max-width: 600px) {
+    padding: 13px;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,7 +256,6 @@ const StyledContentFooter = styled.div`
   .rules {
     max-width: 854px;
     margin-top: 55px;
-
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -178,6 +282,20 @@ const StyledContentFooter = styled.div`
         color: #ffffff;
         font-size: 15px;
         font-family: Helvetica Neue LT GEO;
+      }
+      @media screen and (max-width: 600px) {
+        p {
+          width: 220px;
+          font-size: 14px;
+          text-align: start;
+          color: #bbbbbb;
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      margin-top: 45px;
+      div {
+        height: 50px;
       }
     }
   }
@@ -240,43 +358,19 @@ function App() {
 
   return (
     <div className="App">
-      <StyledContainer className="container">
-        <StyledContentHead className="content-head">
-          <div
-            style={{
-              position: "-webkit-sticky",
-              top: " 0",
-              position: "sticky",
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "16px",
-              alignItems: "center",
-              zIndex: "22222",
-            }}
-          >
+      <StyledContainer>
+        <div className="logo-signin">
+          <img src={Logo} alt="logo" />
+          <div className="signUpIn">
+            <p>Sign up</p>
+            <button>Sign in</button>
+          </div>
+        </div>
+        <StyledContentHead>
+          <div className="content-head">
             <div className="content-head-left">
-              <p
-                style={{
-                  color: "#fff",
-                  backgroundColor: "#7D7D7D",
-                  padding: "4px 10px",
-                  borderRadius: "20px",
-                  fontSize: "13px",
-                  fontFamily: "Helvetica Neue LT GEO",
-                }}
-              >
-                სლოტები
-              </p>
-              <p
-                style={{
-                  color: "#fff",
-                  fontSize: "15px",
-                  fontFamily: "Helvetica Neue LT GEO",
-                  fontWeight: "bold",
-                }}
-              >
-                10 იანვარი - 12 მარტი
-              </p>
+              <p>სლოტები</p>
+              <span>10 იანვარი - 12 მარტი</span>
             </div>
             <div className="content-head-right">
               <CloseIcon sx={{ color: "#FFFFFF" }} fontSize="small" />
@@ -286,16 +380,10 @@ function App() {
         <StyledContentBody className="content-body">
           <div className="sections-cont">
             <div className="sections-head">
-              <p
-                style={{
-                  fontFamily: "November GeLC",
-                  fontWeight: "bold",
-                  fontSize: "20px",
-                  color: "#fff",
-                }}
-              >
-                მოიპოვე მრავალფეროვანი პრიზები და 10 საგზურიდან ერთ-ერთი
-              </p>
+              <h3>
+                მოიპოვე <span className="h3Hid">მრავალფეროვანი პრიზები და</span>{" "}
+                10 საგზურიდან ერთ-ერთი
+              </h3>
               <p
                 style={{
                   fontFamily: "November GeLC",
@@ -341,15 +429,15 @@ function App() {
             </p>
             <div className="terms">
               <p>როდის იწყება და რა ფორმატით გაიმართება აქცია</p>
-              <img src={ArrowDown} />
+              <img src={ArrowDown} alt="arrowDown" />
             </div>
             <div className="terms">
               <p>როგორ მივიღო აქციაში მონაწილეობა?</p>
-              <img src={ArrowDown} />
+              <img src={ArrowDown} alt="arrowDown" />
             </div>
             <div className="terms">
               <p>სხვადასვა</p>
-              <img src={ArrowDown} />
+              <img src={ArrowDown} alt="arrowDown" />
             </div>
           </div>
           <div className="promotions">
@@ -364,7 +452,7 @@ function App() {
             </p>
             <div className="images">
               <div className="img-text">
-                <img src={SlideImgB} />
+                <img src={SlideImgB} alt="img" />
                 <div
                   className="p-sp"
                   style={{
@@ -377,7 +465,7 @@ function App() {
                 </div>
               </div>
               <div className="img-text">
-                <img src={SlideImgC} />
+                <img src={SlideImgC} alt="img" />
                 <div
                   className="p-sp"
                   style={{
@@ -390,7 +478,7 @@ function App() {
                 </div>
               </div>
               <div className="img-text">
-                <img src={SlideImgA} />
+                <img src={SlideImgA} alt="img" />
                 <div
                   className="p-sp"
                   style={{
@@ -403,7 +491,7 @@ function App() {
                 </div>
               </div>
               <div className="img-text">
-                <img src={SlideImgB} />
+                <img src={SlideImgB} alt="img" />
                 <div
                   className="p-sp"
                   style={{
@@ -419,7 +507,7 @@ function App() {
           </div>
         </StyledContentFooter>
         <div className="play-btn">
-          <a
+          <button
             href="#"
             style={{
               padding: "8px 40px",
@@ -431,7 +519,7 @@ function App() {
             }}
           >
             ითამაშე
-          </a>
+          </button>
         </div>
       </StyledContainer>
     </div>

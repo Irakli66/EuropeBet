@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+
+// Component imports
 import Box1 from "./BoxOne";
 import Box2 from "./BoxTwo";
 
@@ -24,10 +26,16 @@ const StyledSectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 600px) {
+      z-index: 222;
+    }
     p {
       font-size: 18px;
       color: #ffffff;
       font-family: November GeLC;
+      @media screen and (max-width: 600px) {
+        font-size: 16px;
+      }
     }
   }
 `;
@@ -39,6 +47,9 @@ const StyledSection = styled.div`
   background-color: #171718;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  @media screen and (max-width: 600px) {
+    background-color: #25292b;
+  }
 `;
 
 const StyledContBottom = styled.div`
@@ -49,8 +60,25 @@ const StyledContBottom = styled.div`
   position: relative;
   margin-top: 20px;
   background-color: #2c3234;
+
   p {
     color: #fff;
+    font-size: 18px;
+    font-family: November GeLC;
+    font-weight: bold;
+  }
+  span {
+    color: #fff;
+    font-size: 15px;
+    font-family: Helvetica Neue LT GEO, 55 Roman;
+  }
+  @media screen and (max-width: 600px) {
+    p {
+      font-size: 16px;
+    }
+    span {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -88,7 +116,7 @@ function Section1() {
             >
               * ლიდერბორდის შედეგები განახლდება{" "}
               <a
-                href="#"
+                href="/"
                 style={{
                   color: "#EF5A21",
                   fontSize: "14px",
@@ -123,25 +151,14 @@ function Section1() {
             padding: "24px",
           }}
         >
-          <p
-            style={{
-              fontSize: "18px",
-              fontFamily: "November GeLC",
-              fontWeight: "bold",
-            }}
-          >
+          <p>
             ᲓᲐᲛᲐᲢᲔᲑᲘᲗ ᲨᲔᲓᲒᲔᲑᲐ, ᲥᲔᲨᲒᲔᲘᲛᲘᲡ, ᲢᲣᲠᲜᲘᲠᲔᲑᲘᲡ ᲓᲐ ᲡᲞᲘᲜ ᲞᲝᲙᲔᲠᲘᲡ 12 SIDE
             ᲚᲘᲓᲔᲠᲑᲝᲠᲓᲘ
           </p>
-          <p
-            style={{
-              fontSize: "15px",
-              fontFamily: "Helvetica Neue LT GEO, 55 Roman",
-            }}
-          >
+          <span>
             * Side ლიდერბორდების შესახებ დეტალური ინფორმაცია იხილეთ პოკერის
             ლობიში.
-          </p>
+          </span>
         </div>
       </StyledContBottom>
     </>

@@ -28,6 +28,23 @@ const StyledContTop = styled.div`
   margin-top: 20px;
   background-color: #2c3234;
   padding: 4px;
+
+  .sectionTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    p {
+      font-size: 18px;
+      font-family: November GeLC;
+      font-weight: bold;
+    }
+    @media screen and (max-width: 600px) {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
   p {
     color: #fff;
   }
@@ -43,7 +60,11 @@ const StyledContTop = styled.div`
     border-bottom-right-radius: 20px;
     background-color: #171718;
     width: 100%;
-
+    h3 {
+      font-size: 16px;
+      color: #ffffff;
+      font-family: November GeLC;
+    }
     .time {
       position: relative;
       border: #f05a22 solid 2px;
@@ -66,19 +87,65 @@ const StyledContTop = styled.div`
       left: -10px;
       padding-left: 20px;
     }
-
-    p {
-      color: #ffffff;
-      opacity: 0.9;
-      font-size: 13px;
+    .infoBtn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      a {
+        max-width: 153px;
+        font-size: 15px;
+        color: #ffffff;
+        padding: 6.5px 18.5px;
+        background-color: #f05a22;
+        border-radius: 3px;
+      }
+      p {
+        color: #ffffff;
+        opacity: 0.9;
+        font-size: 13px;
+      }
     }
 
+    @media screen and (max-width: 600px) {
+      gap: 15px;
+      img {
+        width: 90px;
+        height: 60px;
+      }
+      .infoBtn {
+        visibility: hidden;
+        position: absolute;
+        z-index: 22222;
+        top: 100px;
+        left: 100px;
+      }
+    }
+  }
+  .infoBtnMobile {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
     a {
+      max-width: 153px;
       font-size: 15px;
       color: #ffffff;
       padding: 6.5px 18.5px;
       background-color: #f05a22;
       border-radius: 3px;
+    }
+    @media screen and (max-width: 600px) {
+      visibility: visible;
+      position: relative;
+      margin: 15px 0px;
+      p,
+      a {
+        font-size: 14px;
+      }
     }
   }
 `;
@@ -94,22 +161,57 @@ const StyledMidContent = styled.div`
   border-top: none !important;
   border: 4px solid #2c3234;
   border-radius: 20px;
-
-  h3 {
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 18px;
-    font-family: November GeLC;
+  @media screen and (max-width: 600px) {
+    background-color: #25292b;
   }
 
-  p {
-    color: #ffffff;
-    font-size: 14px;
-    font-family: November GeLC, Light;
+  .midContTitle {
+    padding: 22px 74px;
+    background-color: #2c3234;
+    width: 100%;
+    h3 {
+      font-weight: bold;
+      color: #ffffff;
+      font-size: 17px;
+      font-family: November GeLC;
+    }
   }
-  a {
-    color: #ef5a21;
-    text-decoration: underline;
+  .midContUText {
+    margin: 16px 0px;
+    p {
+      color: #ffffff;
+      font-size: 14px;
+      font-family: November GeLC, Light;
+    }
+    a {
+      color: #ef5a21;
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .midContTitle {
+      padding: 22px 45px;
+    }
+    .midContUText {
+      margin: 20px 0px;
+      display: flex;
+      width: 280px;
+      flex-direction: column;
+      gap: 5px;
+      p {
+        color: #ffffff;
+        font-size: 13px;
+        font-family: November GeLC, Regular;
+      }
+      a {
+        color: #ef5a21;
+        text-decoration: underline;
+      }
+    }
+    h3 {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -118,6 +220,7 @@ const StyledBotCont = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 24px;
   justify-content: center;
   align-items: center;
   background-color: #171718;
@@ -132,8 +235,14 @@ const StyledBotCont = styled.div`
       display: flex;
       flex-direction: column;
       gap: 14px;
+      .twoImgs {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
       .img-cover-txt {
-        margin-left: 29px;
+        margin-left: 22px;
+        max-width: 300px;
         width: 100%;
         position: absolute;
         display: flex;
@@ -151,10 +260,11 @@ const StyledBotCont = styled.div`
         color: #ffffff;
         font-family: Helvetica Neue One Caps;
         font-weight: bold;
+        justify-content: space-between;
       }
       .img-cover-txt-bottom {
         max-width: 100%;
-        /* width: 100%; */
+
         align-items: start;
         justify-content: center;
         position: absolute;
@@ -164,6 +274,71 @@ const StyledBotCont = styled.div`
         display: flex;
         flex-direction: column;
         gap: 11px;
+        .secondTxt span {
+          color: #094b3d;
+          font-family: Helvetica Neue LT GEO, 65 Medium;
+          font-size: 16px;
+          background-color: #d7c860;
+          padding: 4px 23px;
+          border-radius: 15px;
+          border-bottom-right-radius: 0;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .twoImgs {
+          display: flex;
+          flex-direction: column;
+          .img-cover-txt {
+            left: 40%;
+            .txt-first {
+              gap: 25px !important;
+            }
+            .txt-second {
+              gap: 40px !important;
+            }
+          }
+        }
+        img {
+          height: 85px;
+          width: 100%;
+        }
+        .bottom-img img {
+          width: 100%;
+          height: 86px;
+        }
+        .img-cover-txt-bottom {
+          display: flex;
+          gap: 10px;
+          left: 142px !important;
+          div p {
+            width: 100px;
+
+            text-align: justify !important;
+          }
+          .txt-first,
+          .secondTxt p {
+          }
+          .secondTxt {
+            display: flex;
+            width: 100% !important;
+            gap: 60px !important;
+            span {
+              color: #094b3d;
+              font-family: Helvetica Neue LT GEO, 65 Medium;
+              font-size: 14px;
+              background-color: #d7c860;
+              padding: 3px 10px;
+              border-radius: 15px;
+              border-bottom-right-radius: 0;
+            }
+          }
+        }
+        p {
+          font-size: 14px !important;
+        }
+        #prize {
+          font-size: 24px !important;
+        }
       }
     }
     display: flex;
@@ -171,9 +346,12 @@ const StyledBotCont = styled.div`
     img {
       max-width: 100%;
     }
-    @media only screen and (max-width: 768px) {
-      img {
-        width: 100%;
+    @media only screen and (max-width: 600px) {
+      margin: 0px;
+      .imgUtext {
+        text-align: start;
+        font-size: 14px;
+        font-family: Helvetica Neue LT GEO, 65 Medium;
       }
     }
   }
@@ -189,6 +367,16 @@ const StyledBotCont = styled.div`
     color: #ffffff;
     font-size: 14px;
   }
+  @media only screen and (max-width: 600px) {
+    background-color: #1c1d1e;
+    border: none;
+
+    h3 {
+      font-size: 13px;
+      text-align: start;
+      width: 100%;
+    }
+  }
 `;
 const StyledContUnder = styled.div`
   display: flex;
@@ -200,6 +388,22 @@ const StyledContUnder = styled.div`
   background-color: #2c3234;
   p {
     color: #fff;
+    font-size: 18px;
+    font-family: November GeLC;
+    font-weight: bold;
+  }
+  span {
+    color: #fff;
+    font-size: 15px;
+    font-family: Helvetica Neue LT GEO, 55 Roman;
+  }
+  @media only screen and (max-width: 600px) {
+    p {
+      font-size: 16px;
+    }
+    span {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -219,28 +423,11 @@ function Section2(props) {
             top: "-3px",
           }}
         />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            padding: "24px",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "18px",
-              fontFamily: "November GeLC",
-              fontWeight: "bold",
-            }}
-          >
-            ᲢᲣᲠᲜᲘᲠᲔᲑᲘ ᲓᲐ ᲡᲐᲢᲔᲚᲘᲢᲔᲑᲘ
-          </p>
+        <div className="sectionTitle">
+          <p>ᲢᲣᲠᲜᲘᲠᲔᲑᲘ ᲓᲐ ᲡᲐᲢᲔᲚᲘᲢᲔᲑᲘ</p>
         </div>
         <div className="content">
-          <h3 style={{ color: "#FFFFFF", fontFamily: "November GeLC" }}>
-            სერიის ფარგლებში, ყოველდღიურად გაიმართება 3 ივენთი:
-          </h3>
+          <h3>სერიის ფარგლებში, ყოველდღიურად გაიმართება 3 ივენთი:</h3>
           <div className="time">
             <div className="clock">
               <AccessTimeIcon sx={{ color: "#fff" }} />
@@ -263,18 +450,17 @@ function Section2(props) {
               </p>
             </div>
           </div>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-          >
+          <div className="infoBtn">
             <p>* ყველა ტურნირზე მოხვედრა შესაძლებელია 0 ლარიდან.</p>
             <p>
               ტურნირების სრული განრიგის სანახავად გადადი <br /> პოკერის ლობიში
             </p>
+            <a href="/">პოკერის ლობი</a>
           </div>
-          <a href="#">პოკერის ლობი</a>
           <img
             src={PromoLeft}
             style={{ position: "absolute", bottom: "0", left: "0" }}
+            alt="promo"
           />
           <img
             src={PromoRight}
@@ -283,7 +469,15 @@ function Section2(props) {
               bottom: "0",
               right: "0",
             }}
+            alt="promo"
           />
+        </div>
+        <div className="infoBtnMobile">
+          <p>* ყველა ტურნირზე მოხვედრა შესაძლებელია 0 ლარიდან.</p>
+          <p>
+            ტურნირების სრული განრიგის სანახავად გადადი <br /> პოკერის ლობიში
+          </p>
+          <a href="/">პოკერის ლობი</a>
         </div>
       </StyledContTop>
       <StyledMidContent>
@@ -298,14 +492,15 @@ function Section2(props) {
             top: "-2px",
           }}
         />
-        <div style={{ padding: "22px 74px", backgroundColor: "#2C3234" }}>
+        <div className="midContTitle">
           <h3>ᲛᲝᲮᲕᲓᲘ TOP20 ᲚᲘᲓᲔᲠᲑᲝᲠᲓᲨᲘ ᲢᲣᲠᲜᲘᲠᲔᲑᲖᲔ ᲓᲐᲒᲠᲝᲕᲔᲑᲣᲚᲘ ᲥᲣᲚᲔᲑᲘᲗ</h3>
         </div>
         <BoxOne id={props.id} />
+
         <BoxTwo />
-        <div style={{ margin: "16px 0" }}>
+        <div className="midContUText">
           <p>
-            * ლიდერბორდის შედეგები განახლდება <a href="#">პოკერის ლობიში</a>
+            * ლიდერბორდის შედეგები განახლდება <a href="/">პოკერის ლობიში</a>
           </p>
           <p>
             * სატურნირო ლიდერბორდის ქულების დათვლაში არ მონაწილეობს ფრიროლები და
@@ -317,19 +512,10 @@ function Section2(props) {
         <div className="bott-cont">
           <h3>ᲧᲝᲕᲔᲚᲓᲦᲘᲣᲠᲘ ᲢᲣᲠᲜᲘᲠᲔᲑᲘ ᲓᲐ ᲡᲐᲢᲔᲚᲘᲢᲔᲑᲘ</h3>
           <div className="imgs">
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-              }}
-            >
+            <div className="twoImgs">
               <div style={{ position: "relative", width: "100%" }}>
                 <div className="img-cover-txt">
-                  <div
-                    style={{ display: "flex", gap: "40px" }}
-                    className="txt-first"
-                  >
+                  <div style={{ display: "flex" }} className="txt-first">
                     <p
                       style={{
                         fontSize: "15px",
@@ -345,7 +531,7 @@ function Section2(props) {
                       ბაი-ინი - 550₾
                     </p>
                   </div>
-                  <div style={{ display: "flex", gap: "65px" }}>
+                  <div style={{ display: "flex" }} className="txt-second">
                     <p
                       style={{
                         color: "#FFBE00",
@@ -353,6 +539,7 @@ function Section2(props) {
                         fontWeight: "bold",
                         fontSize: "24px",
                       }}
+                      id="prize"
                     >
                       50 000 ₾
                     </p>
@@ -372,11 +559,11 @@ function Section2(props) {
                     </p>
                   </div>
                 </div>
-                <img src={MainBgSm} />
+                <img src={MainBgSm} alt="img" />
               </div>
               <div style={{ position: "relative", width: "100%" }}>
                 <div className="img-cover-txt">
-                  <div style={{ gap: "40px" }} className="txt-second">
+                  <div className="txt-first">
                     <p
                       style={{
                         fontSize: "15px",
@@ -392,7 +579,7 @@ function Section2(props) {
                       ბაი-ინი - 550₾
                     </p>
                   </div>
-                  <div style={{ gap: "65px" }}>
+                  <div className="txt-second">
                     <p
                       style={{
                         color: "#FFBE00",
@@ -400,6 +587,7 @@ function Section2(props) {
                         fontWeight: "bold",
                         fontSize: "24px",
                       }}
+                      id="prize"
                     >
                       50 000 ₾
                     </p>
@@ -419,10 +607,13 @@ function Section2(props) {
                     </p>
                   </div>
                 </div>
-                <img src={MainBgSm} />
+                <img src={MainBgSm} alt="img" />
               </div>
             </div>
-            <div style={{ position: "relative", width: "100%" }}>
+            <div
+              style={{ position: "relative", width: "100%" }}
+              className="bottom-img"
+            >
               <div className="img-cover-txt-bottom">
                 <div style={{ display: "flex", gap: "62px" }}>
                   <p
@@ -431,42 +622,34 @@ function Section2(props) {
                       fontSize: "22px",
                       fontFamily: "Helvetica Neue One Caps",
                       fontWeight: "bol",
+                      textAlign: "start",
                     }}
                   >
                     Main Events
                   </p>
                   <p className="txt-first">ბაი-ინი - 550₾</p>
                 </div>
-                <div style={{ display: "flex", gap: "76px" }}>
+                <div
+                  style={{ display: "flex", gap: "76px" }}
+                  className="secondTxt"
+                >
                   <p
                     style={{
                       color: "#FFBE00",
                       fontFamily: "Helvetica Neue LT GEO, 65 Medium",
                       fontSize: "26px",
                     }}
+                    id="prize"
                   >
                     150 000₾
                   </p>
-                  <p
-                    style={{
-                      color: "#094B3D",
-                      fontFamily: "Helvetica Neue LT GEO, 65 Medium",
-                      fontSize: "16px",
-                      backgroundColor: "#D7C860",
-                      padding: "4px 23px",
-                      borderRadius: "15px",
-
-                      borderBottomRightRadius: "0",
-                    }}
-                  >
-                    29 აპრილი
-                  </p>
+                  <span>29 აპრილი</span>
                 </div>
               </div>
-              <img src={MainBg} />
+              <img src={MainBg} alt="img" />
             </div>
           </div>
-          <p>
+          <p className="imgUtext">
             * სამივე ტურნირის გამარჯვებულები მიიღებენ ბეჭდებს და ფინალურ ეტაპზე,
             The <br /> Lord of the Rings ტურნირზე, იბრძოლებენ The Festival in
             Malta-ს საგზურის მისაღებად.
@@ -494,25 +677,14 @@ function Section2(props) {
             padding: "24px",
           }}
         >
-          <p
-            style={{
-              fontSize: "18px",
-              fontFamily: "November GeLC",
-              fontWeight: "bold",
-            }}
-          >
+          <p>
             ᲓᲐᲛᲐᲢᲔᲑᲘᲗ ᲨᲔᲓᲒᲔᲑᲐ, ᲥᲔᲨᲒᲔᲘᲛᲘᲡ, ᲢᲣᲠᲜᲘᲠᲔᲑᲘᲡ ᲓᲐ ᲡᲞᲘᲜ ᲞᲝᲙᲔᲠᲘᲡ 12 SIDE
             ᲚᲘᲓᲔᲠᲑᲝᲠᲓᲘ
           </p>
-          <p
-            style={{
-              fontSize: "15px",
-              fontFamily: "Helvetica Neue LT GEO, 55 Roman",
-            }}
-          >
+          <span>
             * Side ლიდერბორდების შესახებ დეტალური ინფორმაცია იხილეთ პოკერის
             ლობიში.
-          </p>
+          </span>
         </div>
       </StyledContUnder>
     </StyledSectionTwo>

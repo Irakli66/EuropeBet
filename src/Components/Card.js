@@ -22,7 +22,7 @@ function Card() {
         {CardData.map((data) => {
           return (
             <div className="card-element" key={data.id}>
-              <img src={data.img} />
+              <img src={data.img} alt="img" />
               <p>{data.title}</p>
             </div>
           );

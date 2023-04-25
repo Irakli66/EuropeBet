@@ -19,6 +19,9 @@ const StyledContainer = styled.div`
   background-color: #171718;
   border: #25292b solid 4px;
   padding: 24px;
+  @media only screen and (max-width: 600px) {
+    padding: 15px;
+  }
 `;
 const StyledTopContent = styled.div`
   img {
@@ -99,6 +102,28 @@ const StyledTopContent = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    .top-text {
+      hr {
+        height: 25px !important;
+      }
+      div {
+        max-width: 401px;
+        width: 100%;
+      }
+    }
+    .cards-container {
+      padding: 0px;
+      display: flex;
+      gap: 28px;
+      flex-direction: column;
+      align-items: center;
+      .card {
+        width: 100%;
+        max-width: 401px;
+      }
+    }
+  }
 `;
 
 const StyledMidContent = styled.div`
@@ -146,18 +171,21 @@ const StyledMidContent = styled.div`
   .fiveBox {
     display: flex;
     gap: 15px;
+
     justify-content: space-between;
   }
 
   .threeBox {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     width: 100%;
   }
   .twoBox {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 21px;
     width: 100%;
   }
@@ -195,6 +223,14 @@ const StyledMidContent = styled.div`
       height: 41px;
     }
   }
+  @media only screen and (max-width: 600px) {
+    background-color: #25292b;
+    border: none;
+    .fiveBox {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 const StyledBottomContent = styled.div`
@@ -218,7 +254,11 @@ function Section3(props) {
       <StyledContainer>
         <StyledTopContent>
           <div className="img">
-            <img src={FinalInfo} style={{ maxWidth: "100%" }} />
+            <img
+              src={FinalInfo}
+              style={{ maxWidth: "100%" }}
+              alt="final info"
+            />
           </div>
           <div className="top-text">
             <h3 style={{ marginTop: "13px" }}>
@@ -282,21 +322,21 @@ function Section3(props) {
                   <h4>“Cashgame Highrollers” -</h4>
                   <p>1 საგზური</p>
                 </div>
-                <img src={PokerItemTicket} />
+                <img src={PokerItemTicket} alt="pocker ticket" />
               </div>
               <div className="box">
                 <div>
                   <h4>„Cashgame Grinders”</h4>
                   <p>1 საგზური</p>
                 </div>
-                <img src={PokerItemTicket} />
+                <img src={PokerItemTicket} alt="pocker ticket" />
               </div>
               <div className="box">
                 <div>
                   <h4>„Tournament Sharks“ -</h4>
                   <p>1 საგზური</p>
                 </div>
-                <img src={PokerItemTicket} />
+                <img src={PokerItemTicket} alt="pocker ticket" />
               </div>
             </div>
             <div className="twoBox">
@@ -310,7 +350,7 @@ function Section3(props) {
                     მსურველს 165₾ ბაი-ინის გადახდით.
                   </p>
                 </div>
-                <img src={PokerItemTwoTicket} />
+                <img src={PokerItemTwoTicket} alt="pocker ticket" />
               </div>
               <div className="box" style={{ height: "155px" }}>
                 <div>
@@ -321,7 +361,7 @@ function Section3(props) {
                     მსურველს 165₾ ბაი-ინის გადახდით.
                   </p>
                 </div>
-                <img src={PokerItemTicket} />
+                <img src={PokerItemTicket} alt="pocker ticket" />
               </div>
             </div>
           </div>
@@ -361,7 +401,6 @@ function Section3(props) {
             <h2 style={{ color: "#fff", fontSize: "20px" }}>
               მისტიური გასაღები
             </h2>
-            <img />
           </div>
         </div>
         <BoxOne id={props.id} />

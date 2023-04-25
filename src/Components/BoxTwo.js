@@ -1,6 +1,9 @@
 import React from "react";
-import { Prizes } from "../Data/Prizes";
 import styled from "styled-components";
+
+//data import
+import { Prizes } from "../Data/Prizes";
+
 const StyledCont = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,6 +12,9 @@ const StyledCont = styled.div`
   background-color: #171718;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  @media screen and (max-width: 600px) {
+    background-color: #25292b;
+  }
 
   .box-2 {
     margin-top: 24px;
@@ -23,6 +29,9 @@ const StyledCont = styled.div`
     background-color: #25292b;
     border-radius: 20px;
     align-items: flex-start;
+    @media screen and (max-width: 600px) {
+      padding: 14px;
+    }
     .box-prizes {
       position: relative;
       display: flex;
@@ -33,11 +42,44 @@ const StyledCont = styled.div`
       border-radius: 10px;
       width: 100%;
       overflow: hidden;
+      hr {
+        height: 46px;
+        border: solid 3px #ef5a21;
+        border-radius: 5px;
+        box-shadow: 10px 10px 50px #ef5a21;
+        position: absolute;
+        left: -3px;
+      }
+      img {
+        width: 20px;
+        margin-left: 32px;
+      }
+      div {
+        margin-left: 32px;
+      }
+      @media screen and (max-width: 600px) {
+        height: 63px;
+        background-color: #2c3234;
+        hr {
+          height: 30px;
+        }
+        img {
+          width: 37px;
+          height: 35px;
+          margin-left: 12px;
+        }
+        div {
+          margin-left: 12px;
+        }
+      }
       p {
         color: #ffffff;
         font-family: Helvetica Neue LT GEO;
         font-size: 15px;
         text-align: start;
+        @media screen and (max-width: 600px) {
+          font-size: 13px;
+        }
       }
     }
   }
@@ -49,23 +91,11 @@ function BoxTwo() {
         {Prizes.map((data) => {
           return (
             <div className="box-prizes">
-              <hr
-                style={{
-                  height: "46px",
-                  border: "solid 3px #EF5A21",
-                  borderRadius: "5px",
-                  boxShadow: "10px 10px 50px #EF5A21",
-                  position: "absolute",
-                  left: "-3px",
-                }}
-              />
+              <hr />
               {!data.icon ? (
-                <img
-                  src={data.img}
-                  style={{ width: "20px", marginLeft: "32px" }}
-                />
+                <img src={data.img} alt="prize" />
               ) : (
-                <div style={{ marginLeft: "32px" }}>{data.icon}</div>
+                <div>{data.icon}</div>
               )}
               <p style={{ width: "529px" }}>{data.title}</p>
             </div>

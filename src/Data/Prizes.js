@@ -1,6 +1,4 @@
 import TravelIcon from "../Assets/Images/travel-icon-sm.png";
-import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
-import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import TicketIcon from "../Assets/Images/ticket-icon-sm.png";
 
 export const Prizes = [
@@ -13,6 +11,7 @@ export const Prizes = [
   {
     id: 3,
     title: "ტექნიკის მაღაზიის ვაუჩერი",
-    icon: <CardGiftcardIcon fontSize="small" sx={{ color: "#fff" }} />,
+    // მე-3 icon არ იყო ასეტებში
+    img: TicketIcon,
   },
 ];
